@@ -1,0 +1,20 @@
+@CHARSET "UTF-8";
+
+image {
+	width: 280px;
+	height: 280px;
+/* 	float: left */
+/* 	position: absolute; */
+/* 	top: 220px; */
+/* 	left: 80px */
+
+}
+
+table {
+
+}
+
+#buyItem {
+	text-align: center;
+	clear: both;
+}
