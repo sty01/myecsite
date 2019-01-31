@@ -5,11 +5,8 @@ import com.internousdev.ecsite2.dto.BuyItemDTO;
 import com.opensymphony.xwork2.ActionSupport;
 
 public class ItemInfoAction extends ActionSupport {
-
-
 	private String id;
 	private BuyItemDTO buyItemDTO = new BuyItemDTO();
-
 
 	public String execute(){
 		ItemInfoDAO itemInfoDAO = new ItemInfoDAO();
@@ -28,11 +25,9 @@ public class ItemInfoAction extends ActionSupport {
 	public void setId(String id) {
 		this.id = id;
 	}
-
 	public BuyItemDTO getBuyItemDTO() {
 		return buyItemDTO;
 	}
-
 	public void setBuyItemDTO(BuyItemDTO buyItemDTO) {
 		this.buyItemDTO = buyItemDTO;
 	}

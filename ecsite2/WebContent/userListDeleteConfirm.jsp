@@ -14,14 +14,14 @@
 <script
 	src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
 <title>削除確認画面</title>
-<link rel="stylesheet" href="./css/home.css"/>
+<link rel="stylesheet" href="./css/home.css" />
 
 <script type="text/javascript">
-			function submitAction(url) {
-				$('form').attr('action', url);
-				$('form').submit();
-			}
-		</script>
+	function submitAction(url) {
+		$('form').attr('action', url);
+		$('form').submit();
+	}
+</script>
 </head>
 <body>
 	<jsp:include page="header.jsp"></jsp:include>
@@ -39,6 +39,6 @@
 			</s:form>
 		</div>
 	</div>
-	<jsp:include page="footer.jsp"/>
+	<jsp:include page="footer.jsp" />
 </body>
 </html>

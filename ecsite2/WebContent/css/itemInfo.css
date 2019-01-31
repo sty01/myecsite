@@ -3,15 +3,10 @@
 image {
 	width: 280px;
 	height: 280px;
-/* 	float: left */
-/* 	position: absolute; */
-/* 	top: 220px; */
-/* 	left: 80px */
-
 }
 
 table {
-
+	width:780px;
 }
 
 #buyItem {

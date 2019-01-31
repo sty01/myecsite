@@ -16,20 +16,16 @@
 </head>
 
 <body>
-	<jsp:include page="header.jsp"/>
+	<jsp:include page="header.jsp" />
 	<div id="main">
 		<div id="top">
 			<p>MyPage</p>
 		</div>
 		<div>
-
-
 			<h3>
 				<s:property value="#session.loginUser.userName" />
 				さんの登録情報
 			</h3>
-
-
 			<table border="1">
 				<tr>
 					<th>ログインID</th>
@@ -47,14 +43,12 @@
 					<td><s:property value="#session.loginUser.insertDate" /></td>
 					<td><s:property value="myUserInfoList[6]" /></td>
 				</tr>
-
 			</table>
-
 			<p>
 				パスワードを変更する場合は<a href='<s:url action="ChangePasswordAction"/>'>こちら</a>
 			</p>
 
-			<s:if test="myPageList == null">
+			<s:if test="myPageList.size() ==0">
 				<h3>ご購入情報はありません。</h3>
 			</s:if>
 			<s:elseif test="message == null">
@@ -99,7 +93,7 @@
 			</div>
 		</div>
 	</div>
-	<jsp:include page="footer.jsp"/>
+	<jsp:include page="footer.jsp" />
 </body>
 </html>
 

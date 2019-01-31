@@ -1,0 +1,13 @@
+@CHARSET "UTF-8";
+
+image {
+	width: 110px;
+	height: 110px;
+}
+
+.img {
+	overflow: hidden;
+	position: relative ;
+	width: 110px;
+	height: 110px;
+}

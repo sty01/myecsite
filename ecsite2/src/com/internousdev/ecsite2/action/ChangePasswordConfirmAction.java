@@ -34,52 +34,35 @@ public class ChangePasswordConfirmAction extends ActionSupport implements Sessio
 		}else if(newPass1.equals(pass.toString())){
 			setErrorMessage("元のパスワードと違うパスワードを設定してください");
 			result = ERROR;
-
-
 		}else{
-
 			session.put("newPass1", newPass1);
 		}
 		return result;
 	}
 
-
-
 	public String getPass() {
 		return pass;
 	}
-
-
 
 	public void setPass(String pass) {
 		this.pass = pass;
 	}
 
-
-
 	public String getNewPass1() {
 		return newPass1;
 	}
-
-
 
 	public void setNewPass1(String newPass1) {
 		this.newPass1 = newPass1;
 	}
 
-
-
 	public String getNewPass2() {
 		return newPass2;
 	}
 
-
-
 	public void setNewPass2(String newPass2) {
 		this.newPass2 = newPass2;
 	}
-
-
 
 	@Override
 	public void setSession(Map<String,Object> session){
@@ -91,7 +74,4 @@ public class ChangePasswordConfirmAction extends ActionSupport implements Sessio
 	public void setErrorMessage(String errorMessage){
 		this.errorMessage = errorMessage;
 	}
-
-
 }
-

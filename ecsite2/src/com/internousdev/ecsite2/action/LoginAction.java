@@ -31,16 +31,6 @@ public class LoginAction extends ActionSupport implements SessionAware{
 
 			setErrorMessage("ログインしました");
 
-			//		}else if(((LoginDTO)session.get("loginUser")).getLoginFlg()){
-			//			result = SUCCESS;
-			//			session.put("login_user_id",loginDTO.getLoginId());
-			//
-			//			BuyItemDAO buyItemDAO = new BuyItemDAO();
-			//
-
-			//			List<BuyItemDTO> buyItemDTOList = buyItemDAO.getBuyItemInfo();
-			//			session.put("buyItemDTOList", buyItemDTOList);
-
 			if(loginDTO.getAdminFlg().equals("1")){
 				result = "admin";
 			}

@@ -11,23 +11,24 @@
 <meta name="description" content="" />
 <meta name="keywords" content="" />
 <link rel="stylesheet" href="./css/home.css">
+
+
 <title>Home画面</title>
 
 </head>
 <body>
-	<jsp:include page="/header.jsp"/>
+	<jsp:include page="/header.jsp" />
 
 	<div id="main">
 		<div id="top">
 			<p>Home</p>
 		</div>
-		<div id="center"></div>
 
 		<s:if test="errorMessage !=''">
 			<s:property value="errorMessage" escape="false" />
 		</s:if>
 
 	</div>
-<jsp:include page="/footer.jsp"></jsp:include>
+	<jsp:include page="/footer.jsp"></jsp:include>
 </body>
 </html>

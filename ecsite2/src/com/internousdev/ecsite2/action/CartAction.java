@@ -26,6 +26,7 @@ public class CartAction extends ActionSupport implements SessionAware {
 	int totalPrice = 0;
 
 	private String errorMessage;
+	private String Message;
 	public Map<String,Object> session;
 
 	public String execute() throws SQLException{
@@ -41,8 +42,6 @@ public class CartAction extends ActionSupport implements SessionAware {
 			String[] selectedRowList=selectedRow.split(", ",0);
 
 			CartDAO cartDAO = new CartDAO();
-
-
 			if(checkList==null){
 				setErrorMessage("商品が選択されていません。");
 				result = ERROR;
@@ -60,17 +59,15 @@ public class CartAction extends ActionSupport implements SessionAware {
 			for(String s:selectedRowList){
 				if(Integer.parseInt(countList[Integer.parseInt(s)])+cartDAO.getCartItemCount(userMasterId,Integer.parseInt(idList[Integer.parseInt(s)]))
 				>(Integer.parseInt(itemStockList[Integer.parseInt(s)]))){
-					setErrorMessage("在庫数を超えて購入している商品があります。");
+					setErrorMessage("在庫数を超えて購入しようとしている商品があります。");
 					result=ERROR;
 					return result;
 				}
 			}
 
-
 			int i = 0;
 
 			for(String check : checkList){
-				//DBからデータを取得する
 				int intSelectedRow = Integer.parseInt(selectedRowList[i]);
 				int price = Integer.parseInt(itemPriceList[intSelectedRow]);
 				System.out.println(intSelectedRow +"値段"+price);
@@ -85,8 +82,9 @@ public class CartAction extends ActionSupport implements SessionAware {
 			cartList = cartDAO.getCart(userMasterId);
 			for(ItemInfoDTO dto : cartList){
 				totalPrice += Integer.parseInt(dto.getSubtotal());
-			}
 
+			}
+			setMessage(i+"点の商品がカートに追加されました");
 			result=SUCCESS;
 		}
 		return result;
@@ -165,5 +163,13 @@ public class CartAction extends ActionSupport implements SessionAware {
 
 	public void setId(String id) {
 		this.id = id;
+	}
+
+	public String getMessage() {
+		return Message;
+	}
+
+	public void setMessage(String message) {
+		Message = message;
 	}
 }

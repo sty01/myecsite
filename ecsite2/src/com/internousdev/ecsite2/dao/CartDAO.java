@@ -21,7 +21,6 @@ public class CartDAO {
 	private String sql = "INSERT INTO cart (item_id,item_count,user_master_id,subtotal,pay,insert_date) VALUES(?,?,?,?,?,?)";
 	private String sql2 = "select cart.cart_id as cart_id,cart.item_id as item_id, cart.item_count  as item_count,cart.subtotal as subtotal, cart.pay as pay, cart.insert_date as insert_date, item_info_transaction.item_name as item_name,item_info_transaction.item_price as item_price FROM cart LEFT JOIN item_info_transaction ON item_info_transaction.id = cart.item_id WHERE user_master_id=?";
 
-
 	public void execute(int item_id,int item_count,String user_master_id,int subtotal,String pay) throws SQLException{
 		DBConnector dbConnector = new DBConnector();
 		Connection connection = dbConnector.getConnection();

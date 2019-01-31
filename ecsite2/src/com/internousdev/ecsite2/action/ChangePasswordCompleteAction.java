@@ -22,13 +22,10 @@ public class ChangePasswordCompleteAction extends ActionSupport implements Sessi
 
 	public String execute() throws SQLException{
 
-
-
 		changePasswordCompleteDAO.updatePass(newPass1,session.get("login_user_id").toString());
 
 		loginDTO = loginDAO.getLoginUserInfo(session.get("login_user_id").toString(),newPass1);
 		session.put("loginUser",loginDTO);
-
 
 		String result = SUCCESS;
 

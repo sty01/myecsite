@@ -16,12 +16,14 @@
 </head>
 <body>
 	<div id="header">
-
 		<div id="pr">
 			<a href='<s:url action="GoHomeAction"/>'>ECSITE</a>
 		</div>
 		<ul>
-			<li><s:form action ="SearchAction"><input type="text" name="searchWord" value=""/><s:submit value="検索"/></s:form></li>
+			<li><s:form action="SearchAction">
+					<input type="text" name="searchWord" value="" />
+					<s:submit class="search" value="検索" />
+				</s:form></li>
 			<li><a href='<s:url action="HomeAction"/>'>商品一覧</a></li>
 			<li><a href='<s:url action="LoginAction"/>'>ログイン</a></li>
 			<li><a href='<s:url action="LogoutAction"/>'>ログアウト</a></li>
@@ -37,5 +39,3 @@
 			ID:<s:property value="#session.loginUser.loginId" />でログイン中
 		</s:if>
 	</div>
-
-	<s:debug />

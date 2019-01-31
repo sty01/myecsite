@@ -25,7 +25,6 @@ public class GoCartAction extends ActionSupport implements SessionAware {
 			CartDAO cartDAO = new CartDAO();
 			result = SUCCESS;
 			userMasterId = session.get("login_user_id").toString();
-
 			try{
 				cartList=cartDAO.getCart(userMasterId);
 				for(ItemInfoDTO dto : cartList){
@@ -35,7 +34,6 @@ public class GoCartAction extends ActionSupport implements SessionAware {
 			}catch(SQLException e){
 				e.printStackTrace();
 			}
-
 		}
 		return result;
 	}

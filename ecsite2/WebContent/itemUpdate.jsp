@@ -63,7 +63,8 @@
 				</tr>
 				<tr>
 					<td><label>詳細</label></td>
-					<td><textarea name="itemInfo" cols="20" rows="8"><s:property value="itemInfo" /></textarea></td>
+					<td><textarea name="itemInfo" cols="20" rows="8"><s:property
+								value="itemInfo" /></textarea></td>
 				</tr>
 				<s:submit value="登録" />
 			</s:form>

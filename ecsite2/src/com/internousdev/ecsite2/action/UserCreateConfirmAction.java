@@ -33,7 +33,6 @@ public class UserCreateConfirmAction extends ActionSupport implements SessionAwa
 		return result;
 	}
 
-
 	public String getLoginUserId(){
 		return loginUserId;
 		}

@@ -10,7 +10,7 @@
 <meta http-equiv="imagetoolbar" content="no" />
 <meta name="description" content="" />
 <meta name="keywords" content="" />
-<link rel="stylesheet" href="./css/home.css" >
+<link rel="stylesheet" href="./css/home.css">
 <title>決済画面</title>
 
 </head>
@@ -99,4 +99,3 @@
 	<jsp:include page="footer.jsp" />
 </body>
 </html>
-

@@ -17,20 +17,17 @@ import com.opensymphony.xwork2.ActionSupport;
 
 public class BuyItemCompleteAction extends ActionSupport implements SessionAware {
 
-
 	private String userMasterId;
 	private String errorMessage;
 	private List<ItemInfoDTO> cartList = new ArrayList<ItemInfoDTO>();
 
 	public Map<String,Object> session;
 
-
 	public String execute() throws SQLException{
 		String result = SUCCESS;
-
+		CartDAO cartDAO = new CartDAO();
 		ItemUpdateCompleteDAO itemUpdateCompleteDAO = new ItemUpdateCompleteDAO();
 
-		CartDAO cartDAO = new CartDAO();
 		userMasterId = session.get("login_user_id").toString();
 		cartList = cartDAO.getCart(userMasterId);
 
@@ -42,14 +39,13 @@ public class BuyItemCompleteAction extends ActionSupport implements SessionAware
 			String total_count = dto.getItemCount();
 			String pay = dto.getPay();
 			buyItemCompleteDAO.buyItemInfo(item_transaction_id, total_price, total_count, userMasterId, pay);
-			itemUpdateCompleteDAO.updateItem(total_count, item_transaction_id);
+			itemUpdateCompleteDAO.updateItem(total_count, item_transaction_id); //在庫を減らす
 		}
-		CartDeleteDAO cartDeleteDAO = new CartDeleteDAO();
+		CartDeleteDAO cartDeleteDAO = new CartDeleteDAO();//カートを空にする
 		cartDeleteDAO.deleteCart(userMasterId);
 
 		return result;
 	}
-
 
 	public String getUserMasterId() {
 		return userMasterId;
@@ -57,19 +53,16 @@ public class BuyItemCompleteAction extends ActionSupport implements SessionAware
 	public void setUserMasterId(String userMasterId) {
 		this.userMasterId = userMasterId;
 	}
-
 	public String getErrorMessage() {
 		return errorMessage;
 	}
 	public void setErrorMessage(String errorMessage) {
 		this.errorMessage = errorMessage;
 	}
-
 	public Map<String, Object> getSession() {
 		return session;
 	}
 	public void setSession(Map<String, Object> session) {
 		this.session = session;
 	}
-
 }

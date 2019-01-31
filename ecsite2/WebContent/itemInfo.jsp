@@ -17,7 +17,6 @@
 
 </head>
 
-
 <body>
 	<jsp:include page="/header.jsp" />
 	<div id="main">
@@ -25,10 +24,7 @@
 			<p>商品情報</p>
 		</div>
 		<div>
-			<div id="i">
-				<img src='images/<s:property value="buyItemDTO.itemName"/>.jpg' />
-			</div>
-
+		<img src='images/<s:property value="buyItemDTO.itemName"/>.jpg' />
 			<table border="1">
 				<tr>
 					<th>商品名</th>
@@ -46,7 +42,6 @@
 					<th>説明</th>
 					<td><s:property value="buyItemDTO.itemInfo" /></td>
 				</tr>
-
 			</table>
 		</div>
 		<div id="buyItem">

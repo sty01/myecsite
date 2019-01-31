@@ -15,10 +15,7 @@
 <title>UserCreateConfirm画面</title>
 </head>
 <body>
-	<div id="header">
-		<div id="pr">
-		</div>
-	</div>
+	<jsp:include page="header.jsp"/>
 	<div id="main">
 		<div id="top">
 			<p>UserCreateConfirm</p>
@@ -67,10 +64,6 @@
 		</table>
 	</div>
 </div>
-		<div id ="footer">
-			<div id="pr">
-		</div>
-	</div>
-
+	<jsp:include page="footer.jsp"/>
 </body>
 </html>

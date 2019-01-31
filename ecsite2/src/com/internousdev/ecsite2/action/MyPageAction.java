@@ -37,7 +37,6 @@ public class MyPageAction extends ActionSupport implements SessionAware{
 		}else if(deleteFlg.equals("1")){
 			delete();
 
-
 			String user_master_id = session.get("login_user_id").toString();
 			myUserInfoList = myPageDAO.getMyUserInfo(user_master_id);
 			myPass = myUserInfoList.get(2);
@@ -47,8 +46,6 @@ public class MyPageAction extends ActionSupport implements SessionAware{
 		return result;
 
 	}
-
-
 
 	public void delete() throws SQLException{
 		String user_master_id = session.get("login_user_id").toString();

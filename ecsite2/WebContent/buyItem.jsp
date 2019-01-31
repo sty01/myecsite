@@ -3,7 +3,6 @@
 <%@ taglib prefix="s" uri="/struts-tags"%>
 
 <!DOCTYPE html>
-
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
@@ -13,16 +12,17 @@
 <meta name="description" content="" />
 <meta name="keywords" content="" />
 <link rel="stylesheet" href="./css/home.css">
+<link rel="stylesheet" href="./css/buyItem.css">
 
 <title>BuyItem画面</title>
 <script type="text/javascript">
-	function checkSelectedRow(){
+	function checkSelectedRow() {
 		var checkList = document.getElementsByClassName('checkList');
 		var selectedRow = '';
 		var flag = false;
 
-		for(var i=0; i<checkList.length; i++) {
-			if(checkList[i].checked) {
+		for (var i = 0; i < checkList.length; i++) {
+			if (checkList[i].checked) {
 				if (flag == false) {
 					selectedRow = i;
 					flag = true;
@@ -33,8 +33,7 @@
 		}
 		document.getElementById('selectedRow').value = selectedRow;
 	}
-	</script>
-
+</script>
 </head>
 <body>
 	<jsp:include page="/header.jsp"></jsp:include>
@@ -43,7 +42,6 @@
 			<p>BuyItem</p>
 		</div>
 		<div>
-
 			<s:if test="errorMessage !=''">
 				<s:property value="errorMessage" escape="false" />
 			</s:if>
@@ -52,6 +50,7 @@
 				<table border="1">
 					<tr>
 						<td>選択</td>
+						<td>商品画像</td>
 						<td>商品ID</td>
 						<td>商品名</td>
 						<td>値段</td>
@@ -66,8 +65,9 @@
 
 					<s:iterator value="#session.buyItemDTOList">
 						<tr>
-							<td><s:checkbox  name="checkList" class="checkList" value="checked"
-									fieldValue="%{id}"  /></td>
+							<td><s:checkbox name="checkList" class="checkList"
+									value="checked" fieldValue="%{id}" /></td>
+							<td><img src='images/<s:property value="itemName"/>.jpg' /></td>
 							<td><s:property value="id" /></td>
 							<s:hidden name="id" value="%{id}" />
 							<td><s:property value="itemName" /></td>
@@ -76,25 +76,25 @@
 							<s:hidden name="itemPrice" value="%{itemPrice}" />
 							<td><s:property value="itemStock" /><span>個</span></td>
 							<s:hidden name="itemStock" value="%{itemStock}" />
-							<td>
-							<select name="count">
-								<option value="選択してください" selected="selected">
-								<script>if(<s:property value="itemStock" />==0){
+							<td><select name="count">
+									<option value="選択してください" selected="selected">
+										<script>
+											if(<s:property value="itemStock" />==0){
 									document.write("在庫切れです");
 									}else{document.write("選択してください");
-								}</script>
-								</option>
-								<script>
+								}
+										</script>
+									</option>
+									<script>
+
 								for(var i = 1; i <= <s:property value="itemStock" />; i++){
 									document.write("<option value="+i+">");
 									document.write(i);
 									document.write("</option>");
 								}
-								</script>
-								</select>
 
-
-							</td>
+									</script>
+							</select></td>
 
 							<td><a
 								href='<s:url action="ItemInfoAction"><s:param name="id" value="%{id}" /></s:url>'>こちら
@@ -106,18 +106,18 @@
 				<span>支払い方法</span>
 				<input type="radio" name="pay" value="現金払い" checked="checked">現金払い
 						<input type="radio" name="pay" value="クレジットカード">クレジットカード
-						<s:hidden name="selectedRow" id="selectedRow" value=""/>
+						<s:hidden name="selectedRow" id="selectedRow" value="" />
 				<s:submit align="center" onclick="checkSelectedRow()" value="カートに追加" />
 			</s:form>
+			<p>
+				<a href='<s:url action="GoCartAction"/>'>カートを確認</a>
+			</p>
 			<div>
-				<p>
-					前画面に戻る場合は<a href='<s:url action="GoHomeAction"/>'>こちら</a>
-				</p>
 				<p>
 					マイページは<a href='<s:url action="MyPageAction"/>'>こちら</a>
 				</p>
 				<p>
-					ログアウトする場合は<a href='<s:url action="LogoutAction"/>'>こちら</a>
+					ログインは<a href='<s:url action="LoginAction"/>'>こちら</a>
 				</p>
 			</div>
 		</div>
@@ -125,5 +125,3 @@
 	<jsp:include page="/footer.jsp"></jsp:include>
 </body>
 </html>
-
-

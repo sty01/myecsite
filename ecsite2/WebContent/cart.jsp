@@ -33,10 +33,10 @@
 				さんのカート
 			</h3>
 
-			<s:if test="cartList == null">
+			<s:if test="cartList.size() == 0">
 				<h3>ご購入情報はありません。</h3>
 			</s:if>
-			<s:elseif test="message == null">
+			<s:else>
 				<h3>購入情報</h3>
 
 				<s:form action="BuyItemAction">
@@ -87,11 +87,11 @@
 					<s:submit value="削除" />
 				</s:form>
 
-			</s:elseif>
+			</s:else>
 
 			<div id="text-right">
 				<p>
-					商品一覧へ<a href='<s:url action="Home"/>'>こちら</a>
+					商品一覧へ<a href='<s:url action="HomeAction"/>'>こちら</a>
 				</p>
 				<p>
 					ログアウトする場合は<a href='<s:url action="LogoutAction"/>'>こちら</a>

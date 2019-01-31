@@ -15,7 +15,7 @@ public class AdminAction extends ActionSupport implements SessionAware {
 
 	public String execute(){
 		String result = SUCCESS;
-		if(!session.containsKey("login_user_id")){
+		if(!(session.containsKey("loginUser"))){
 			result = ERROR;
 			return result;
 		}else if(!(((LoginDTO)session.get("loginUser")).getAdminFlg().equals("1"))){

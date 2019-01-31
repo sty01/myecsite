@@ -19,11 +19,9 @@ public class HomeAction extends ActionSupport implements SessionAware{
 		List<BuyItemDTO> buyItemDTOList = buyItemDAO.getBuyItemInfo();
 		session.put("buyItemDTOList", buyItemDTOList);
 		String result = SUCCESS;
-		//		}
 
 		return result;
 	}
-
 	@Override
 	public void setSession(Map<String,Object> session){
 		this.session = session;

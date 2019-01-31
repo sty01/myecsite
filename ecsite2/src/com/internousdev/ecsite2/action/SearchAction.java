@@ -24,6 +24,7 @@ public class SearchAction extends ActionSupport implements SessionAware{
 	public Map<String,Object> session;
 
 	public String execute() throws SQLException{
+		errorMessage =null;
 		sw = searchWord.replaceAll("　"," ").replaceAll("\\s+"," ").trim();
 		String result = SUCCESS;
 		if(sw.equals("")){
@@ -108,11 +109,9 @@ public class SearchAction extends ActionSupport implements SessionAware{
 		this.errorMessage = errorMessage;
 	}
 
-
 	public String getSw() {
 		return sw;
 	}
-
 
 	public void setSw(String sw) {
 		this.sw = sw;

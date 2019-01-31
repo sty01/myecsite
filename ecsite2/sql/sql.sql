@@ -74,27 +74,44 @@ create table login_user_transaction(
 
 INSERT INTO item_info_transaction(item_name,item_price,item_stock,item_info) VALUES("ReportPaper",120,65,"●提出する際に便利なレポートタイプのキャンパス音楽帳です。
 ●厚口のA4用紙なので、はぎ取った後もしわになりにくく保管しやすくなっています。
-
 ●サイズ/A4(210×297mm)
 ●罫内容/五線譜・12段
 ●印刷/片面印刷
 ●中紙/上質紙(厚口85g/m2)●製本様式/天糊クロス巻き");
 
-INSERT INTO item_info_transaction(item_name,item_price,item_stock,item_info) VALUES("eraser",38,450,"多孔質セラミックスパウダーの働きで、
+INSERT INTO item_info_transaction(item_name,item_price,item_stock,item_info) VALUES("Folder",120,70,"「クリアーファイル」Pasty から、テーマ別のカラーセットをご提案
+おししそうなフルーツジェラートの4色を選びました。
+ラズベリーピンク・チェリーピンク・ピーチピンク・バニラホワイト
+・酸味さわやか ラズベリーピンク
+・しっかり甘い チェリーピンク
+・やさしい甘さ ピーチピンク
+・香りが甘い バニラホワイト");
+
+INSERT INTO item_info_transaction(item_name,item_price,item_stock,item_info) VALUES("Eraser",38,450,"多孔質セラミックスパウダーの働きで、
 いつもカドで消す感触の消しゴム。
  消しゴム粒子が鉛筆の黒鉛粒子を包み込んで、筆跡をきれいに消します。
 力任せにしなくても、きれいに消えるので、紙を痛めません。");
 
-INSERT INTO item_info_transaction(item_name,item_price,item_stock,item_info) VALUES("PlayColorDot",1200,850,"水性ツインサインペン「プレイカラードット」の12色入りセット。
+INSERT INTO item_info_transaction(item_name,item_price,item_stock,item_info) VALUES("PlayColorDot",1235,850,"水性ツインサインペン「プレイカラードット」の12色入りセット。
 やわらかソフトカラーの丸スタンプ芯と、くっきりブライトカラーの0.3mm超極細芯のツインタイプ。
 イラストや絵手紙、ノートや手帳など、丸スタンプと超極細ラインの組み合わせで、様々な使い方が出来る。");
 
 INSERT INTO item_info_transaction(item_name,item_price,item_stock,item_info) VALUES("WhiteBoardMat",2700,350,"●表面の光の反射を抑えたマットタイプのマグネットホワイトボードです。会議や授業中にプロジェクタで投影しながら書き込むことができます。
 天井の照明の写りこみも軽減でき、カメラなどでの議事録撮影に便利です。●当社従来品比で約６割も軽量化！だからホワイトボードの無い場所へ移動させたり持ち運んだりしやすくなりました。学校や研修でのグループワーク・発表などにも最適です。");
 
+INSERT INTO item_info_transaction(item_name,item_price,item_stock,item_info) VALUES("Tape",530,350,"高い粘着力と抜群の保持力。巻戻しも軽く、しなやかで手切れも良く、作業性に優れている。無溶剤タイプの粘着剤と古紙配合率100%の巻心を使用。
+環境に配慮した布粘着テープ");
 
-	INSERT INTO login_user_transaction(login_id,login_pass,user_name,admin_flg) VALUES("internous","internous01","test","0");
-	INSERT INTO login_user_transaction(login_id,login_pass,user_name,admin_flg) VALUES("admin","admin","admin","1");
-	INSERT INTO login_user_transaction(login_id,login_pass,user_name,admin_flg) VALUES("aa","aabbcc","aa","0");
+INSERT INTO item_info_transaction(item_name,item_price,item_stock,item_info) VALUES("PenCase",2234,350,"高級牛革を採用、飽きのこないシンプルなデザイン。自分用でもプレゼント用も最高！
+シンプルながらも、デザイン性と実用性を兼ね備えて長くご愛用頂けます。
+植物なめし仕上げ、環境にやさしく、革本来の魅力を味わいましょう！ ");
+
+INSERT INTO item_info_transaction(item_name,item_price,item_stock,item_info) VALUES("Diary",3456,30,"■■情報の整理＆検索が楽になる、24時間バーチカル手帳「ジブン手帳Biz」に4月始まりが登場■■
+年度始まりの4月に手帳を切り替えたいビジネスマンや、新学期から手帳を使い始めたい学生の方にもおすすめです。");
+
+
+INSERT INTO login_user_transaction(login_id,login_pass,user_name,admin_flg) VALUES("internous","internous01","test","0");
+INSERT INTO login_user_transaction(login_id,login_pass,user_name,admin_flg) VALUES("admin","admin","admin","1");
+INSERT INTO login_user_transaction(login_id,login_pass,user_name,admin_flg) VALUES("aa","aabbcc","aa","0");
 
 

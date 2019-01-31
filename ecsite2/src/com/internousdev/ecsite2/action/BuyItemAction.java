@@ -26,13 +26,11 @@ public class BuyItemAction extends ActionSupport implements SessionAware {
 		try{
 			cartList=cartDAO.getCart(userMasterId);
 			for(ItemInfoDTO dto : cartList){
-				 totalPrice += Integer.parseInt(dto.getSubtotal());
+				totalPrice += Integer.parseInt(dto.getSubtotal());
 			}
-
 		}catch(SQLException e){
 			e.printStackTrace();
 		}
-
 		return result;
 	}
 	@Override
@@ -45,7 +43,6 @@ public class BuyItemAction extends ActionSupport implements SessionAware {
 	public void setErrorMessage(String errorMessage){
 		this.errorMessage = errorMessage;
 	}
-
 	public Map<String, Object> getSession() {
 		return session;
 	}
